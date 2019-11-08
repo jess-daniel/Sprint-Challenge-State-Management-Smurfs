@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import Smurf from "./Smurf";
 import { getSmurfs } from "../actions";
 import SmurfForm from "./SmurfForm";
+import SmurfContainer from "./styled-components/SmurfContainer";
 
 const SmurfList = props => {
   useEffect(() => {
@@ -14,7 +15,9 @@ const SmurfList = props => {
       <h4>Smurf List</h4>
       <SmurfForm />
       {props.smurfs.map(smurf => (
-        <Smurf key={smurf.name} smurf={smurf} />
+        <SmurfContainer>
+          <Smurf key={smurf.name} smurf={smurf} />
+        </SmurfContainer>
       ))}
     </>
   );
